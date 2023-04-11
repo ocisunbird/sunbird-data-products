@@ -44,6 +44,10 @@ trait OnDemandExhaustJob {
   val requestsTable: String = AppConf.getConfig("postgres.table.job_request")
   val jobStatus = List("SUBMITTED", "FAILED")
   val maxIterations = 3;
+  JobLogger.log("BDS >>> Initializing the OnDemand Exhaust Object", None, INFO)
+  JobLogger.log("BDS >>> connection url = " + url, None, INFO)
+  JobLogger.log("BDS >>> connection user = " + connProperties.getProperty("user"), None, INFO)
+  JobLogger.log("BDS >>> connection password = " + connProperties.getProperty("password"), None, INFO)
   val dbc: Connection = DriverManager.getConnection(url, connProperties.getProperty("user"), connProperties.getProperty("password"));
   dbc.setAutoCommit(true);
 
