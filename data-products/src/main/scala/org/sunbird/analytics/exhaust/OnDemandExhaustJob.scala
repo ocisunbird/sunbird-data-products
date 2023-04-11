@@ -48,6 +48,10 @@ trait OnDemandExhaustJob {
   JobLogger.log("BDS >>> connection url = " + url, None, INFO)
   JobLogger.log("BDS >>> connection user = " + connProperties.getProperty("user"), None, INFO)
   JobLogger.log("BDS >>> connection password = " + connProperties.getProperty("password"), None, INFO)
+  println("BDS <<< Initializing the OnDemand Exhaust Object")
+  println("BDS <<< connection url = " + url)
+  println("BDS <<< connection user = " + connProperties.getProperty("user"))
+  println("BDS <<< connection password = " + connProperties.getProperty("password"))
   val dbc: Connection = DriverManager.getConnection(url, connProperties.getProperty("user"), connProperties.getProperty("password"));
   dbc.setAutoCommit(true);
 
