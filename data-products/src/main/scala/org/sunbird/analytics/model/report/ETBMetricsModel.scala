@@ -230,7 +230,8 @@ object ETBMetricsModel extends IBatchModelTemplate[Empty,Empty,FinalOutput,Final
       case "oci" =>
         val bucket = conf("bucket")
         val file = conf("file")
-        s"s3n://$bucket/$file"
+        val namespace = AppConf.getConfig("oci.namespace")
+        s"oci://$bucket@$namespace/$file"
     }
 
     val scansCount = sparkSession.read
