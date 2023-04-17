@@ -222,6 +222,10 @@ object ETBMetricsModel extends IBatchModelTemplate[Empty,Empty,FinalOutput,Final
     val url = store match {
       case "local" =>
         conf("filePath").asInstanceOf[String]
+      case "oci" =>
+        val bucket = conf("bucket")
+        val file = conf("file")
+        s"s3a://$bucket/$file"
       case "s3" | "azure" =>
         val bucket = conf("bucket")
         val key = AppConf.getConfig("azure_storage_key")
