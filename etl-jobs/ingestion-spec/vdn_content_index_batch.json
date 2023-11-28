@@ -850,8 +850,8 @@
           "type" : "static-azure-blobstore",
           "blobs": [
             {
-              "container": "telemetry-data-store",
-              "path": "/druid-content-snapshot/vdn-snapshot.txt"
+              "container": "odev-dev-diksha-telemetry",
+              "path": "/vdn_content_model_snapshot/vdn-snapshot.txt"
             }
           ],
           "fetchTimeout": 3000000
