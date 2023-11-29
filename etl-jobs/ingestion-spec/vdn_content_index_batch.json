@@ -847,15 +847,8 @@
       "ioConfig":{
         "type":"index",
         "firehose" : {
-     /*     "type" : "static-azure-blobstore", */
           "type" : "static-s3",
           "uris": [ "s3://odev-dev-diksha-telemetry/vdn_content_model_snapshot/vdn-snapshot.txt"],
-/*          "blobs": [
-  *          {
-  *            "container": "odev-dev-diksha-telemetry",
-   *           "path": "/vdn_content_model_snapshot/vdn-snapshot.txt"
-    *        }
-          ],*/
           "fetchTimeout": 3000000
         }
       },
