@@ -848,7 +848,7 @@
         "type":"index",
         "firehose" : {
           "type" : "static-s3",
-          "uris": [ "s3://odev-dev-diksha-telemetry/vdn_content_model_snapshot/vdn-snapshot.txt"],
+          "uris": [ "s3://odev-dev-diksha-telemetry/druid-content-snapshot/vdn-snapshot.txt"],
           "fetchTimeout": 3000000
         }
       },
