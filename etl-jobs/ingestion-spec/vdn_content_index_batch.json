@@ -449,7 +449,12 @@
                   "type": "path",
                   "name": "reusedContributions",
                   "expr": "$.data.reusedContributions[*]"
-                }
+                },
+                {
+                  "type": "path",
+                  "name": "verticals",
+                  "expr": "$.data.verticals[*]"
+                }   
               ]
             },
             "dimensionsSpec":{
@@ -682,6 +687,9 @@
                 },
                 {
                   "name": "reusedContributions"
+                },
+                {
+                  "name": "verticals"
                 }
               ],
               "dimensionsExclusions": []
