@@ -454,7 +454,12 @@
                   "type": "path",
                   "name": "verticals",
                   "expr": "$.data.verticals[*]"
-                }   
+                },
+                {
+                  "type": "path",
+                  "name": "programs",
+                  "expr": "$.data.programs[*]"
+                }
               ]
             },
             "dimensionsSpec":{
@@ -690,6 +695,9 @@
                 },
                 {
                   "name": "verticals"
+                },
+                {
+                  "name": "programs"
                 }
               ],
               "dimensionsExclusions": []
