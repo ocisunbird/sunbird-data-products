@@ -186,9 +186,11 @@ object StateAdminReportJob extends IJob with StateAdminReportHelper {
                 col("usertype").as("User Type"),
                 col("usersubtype").as("User-Sub Type"),
                 col("userroororg").as("Root Org of user"),
-                col("channel").as("provider")).dropDuplicates("Diksha UUID").filter(col("Name").isNotNull)
-        resultDf.saveToBlobStore(storageConfig, "csv", "declared_user_detail", Option(Map("header" -> "true")), Option(Seq("provider")))
-        resultDf
+                col("channel").as("provider"))
+        val resultDfWithoutDuplicatesdf = resultDf.dropDuplicates("Diksha UUID")
+	      val resultDfWithoutDuplicatesAndFilterdf = resultDfWithoutDuplicatesdf.filter(col("Name").isNotNull)  
+        resultDfWithoutDuplicatesAndFilterdf.saveToBlobStore(storageConfig, "csv", "declared_user_detail", Option(Map("header" -> "true")), Option(Seq("provider")))
+        resultDfWithoutDuplicatesAndFilterdf
     }
 
     def locationIdListFunction(location: String): List[String] = {
